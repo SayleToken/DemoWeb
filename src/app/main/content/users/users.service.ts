@@ -66,7 +66,7 @@ export class UsersService implements Resolve<any>
     getContacts(): Promise<any>
     {
         return new Promise((resolve, reject) => {
-                this.http.get('http://ec2-18-220-64-6.us-east-2.compute.amazonaws.com:3000/api/users')
+                this.http.get('http://ec2-52-17-126-108.eu-west-1.compute.amazonaws.com:3000/api/users')
                     .subscribe((response: any) => {
 
                         this.contacts = response.data.docs;
@@ -161,7 +161,7 @@ export class UsersService implements Resolve<any>
     {
         return new Promise((resolve, reject) => {
 
-            this.http.post('http://ec2-18-220-64-6.us-east-2.compute.amazonaws.com:3000/api/users/', {...contact})
+            this.http.post('http://ec2-52-17-126-108.eu-west-1.compute.amazonaws.com:3000/api/users/', {...contact})
                 .subscribe(response => {
                     this.getContacts();
                     resolve(response);
@@ -173,7 +173,7 @@ export class UsersService implements Resolve<any>
     {
         return new Promise((resolve, reject) => {
 
-            this.http.put('http://ec2-18-220-64-6.us-east-2.compute.amazonaws.com:3000/api/users/', {...contact})
+            this.http.put('http://ec2-52-17-126-108.eu-west-1.compute.amazonaws.com:3000/api/users/', {...contact})
                 .subscribe(response => {
                     this.getContacts();
                     resolve(response);
